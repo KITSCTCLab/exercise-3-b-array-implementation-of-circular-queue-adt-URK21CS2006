@@ -17,8 +17,10 @@ class MyCircularQueue:
 
     def dequeue(self) -> bool:
         if not(self.is_empty()):
+          del self.cir_queue[0]
           self.front = (self.front+1)%self.capacity
           self.size = self.size - 1
+          print(self.cir_queue)
           return True
         else:
           return False
@@ -27,13 +29,13 @@ class MyCircularQueue:
         if self.is_empty():
           return(-1)
         else:
-          return(self.cir_queue[self.front])
+          return(self.cir_queue[0])
 
     def get_rear(self):
         if self.is_empty():
           return(-1)
         else:
-          return(self.cir_queue[self.rear])
+          return(self.cir_queue[0])
 
 
     def is_empty(self):
